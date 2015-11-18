@@ -18,3 +18,9 @@
     <td> <%= @cat.description %> </td>
   </tr>
 </table>
+
+<ul>
+  <% CatRentalRequest.order(:start_date).where(:cat_id == @cat.id).each do |request| %>
+    <li>Start Date: <%= request.start_date %>, End Date: <%= request.end_date %></li>
+   <% end %>
+</ul>
