@@ -3,10 +3,7 @@
   <% @cats.each do |cat| %>
   <li>
     <h2> <%= cat.name %> </h2>
-    <li> <%= cat.sex %> </li>
-    <li> <%= cat.color %> </li>
-    <li> <%= cat.birth_date %> </li>
-    <li> <%= cat.description %> </li>
+    <a href=" <%= cat_url(cat)%> ">More info</a>
       <% end %>
     <br>
   </li>

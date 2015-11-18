@@ -1,11 +1,20 @@
 <h1> <%= @cat.name %> </h1>
-<ul>
-  <li>
-    <li> <%= @cat.sex %> </li>
-    <li> <%= @cat.color %> </li>
-    <li> <%= @cat.birth_date %> </li>
-    <li> <%= @cat.description %> </li>
-    <br>
-  </li>
 
-</ul>
+<table>
+  <tr>
+    <td> Sex :  </td>
+    <td> <%= @cat.sex == "M" ? "Male" : "Female" %> </td>
+  </tr>
+  <tr>
+    <td> Color :  </td>
+    <td> <%= @cat.color %> </td>
+  </tr>
+  <tr>
+    <td> Birth date :  </td>
+    <td> <%= @cat.birth_date %> </td>
+  </tr>
+  <tr>
+    <td> Description :  </td>
+    <td> <%= @cat.description %> </td>
+  </tr>
+</table>

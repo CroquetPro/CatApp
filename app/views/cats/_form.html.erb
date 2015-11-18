@@ -1,0 +1,31 @@
+<form action= <%= @cat.persisted? ? cat_url(@cat) : cats_url %> method="post">
+  <% if @cat.persisted? %>
+     <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <h2> <%= "Edit #{@cat.name}" %> </h2>
+  <br>
+  <input type="text" name="cat[name]" placeholder= "name" value=<%=@cat.name%>>
+  <br>
+  <br>
+  <input type="radio" name="cat[sex]" value="M" <%="checked" if @cat.sex == 'M'%>> Male
+  <input type="radio" name="cat[sex]" value="F" <%="checked" if @cat.sex == 'F'%>> Female
+  <br>
+  <br>
+  <select name="cat[color]" id="cat_color">
+    <option>Color</option>
+    <% Cat::COLORS.each do |color| %>
+      <option value="<%= color %>" <%= "selected" if @cat.color ==  color %>><%= color %></option>
+     <% end %>
+  </select>
+  <br>
+  <br>
+  <input type="date" name="cat[birth_date]" value= <%=@cat.birth_date %> >
+  <br>
+  <br>
+  <label for="cat_description">Cat description</label>
+  <br>
+  <textarea name="cat[description]" rows="4" cols="40" value = ""><%=@cat.description%></textarea>
+  <br>
+  <br>
+  <input type="submit" value="Edit cat">
+</form>
